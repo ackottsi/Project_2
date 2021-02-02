@@ -12,7 +12,21 @@ const index = (req, res) => {
     })
 }
 
+
+const editMovie = (req,res) => {
+    Movie.findByPk(req.params.index)
+    .then(movie => {
+      res.render('edit.ejs', {
+        movie: movie
+      });
+    })
+  }
+
+
+
+
 module.exports = {
-    index
+    index,
+    editMovie
 }
 
