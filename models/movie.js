@@ -11,11 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Movie.hasMany(models.Actor, { foreignKey: "movieId" });
     }
   };
   Movie.init({
     name: DataTypes.STRING,
     dateReleased: DataTypes.DATE
+
   }, {
     sequelize,
     modelName: 'Movie',
