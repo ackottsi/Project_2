@@ -1,40 +1,25 @@
 {
-<<<<<<< HEAD
   "name": "project_2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-=======
-  "name": "movie-app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "ejs": "^3.1.5",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {},
->>>>>>> 93685b7a0b5bfc2f1ab1135af23b8bd003afbc81
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ackottsi/Project_2.git"
   },
-<<<<<<< HEAD
   "author": "",
   "license": "ISC",
-=======
->>>>>>> 93685b7a0b5bfc2f1ab1135af23b8bd003afbc81
   "bugs": {
     "url": "https://github.com/ackottsi/Project_2/issues"
   },
-  "homepage": "https://github.com/ackottsi/Project_2#readme"
+  "homepage": "https://github.com/ackottsi/Project_2#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "sequelize": "^6.5.0"
+  }
 }
