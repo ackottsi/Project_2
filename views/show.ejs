@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>Pokemon show page</h1>
+        The Pokemon name is <%= poke.name %> and it looks like this </br>
+        <img src= <%= poke.img %>
+
+        <h3>List of Players that use this Pokemon</h3>
+        <% for (let i=0; i< pokemon.players.length; i++) { %>
+            <li>
+                <%=pokemon.Players[i].name%>
+            </li>
+            <br>
+            < } %>
+
+        }
+
+    </body>
+</html>
