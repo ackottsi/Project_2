@@ -18,9 +18,7 @@ const Movie=require('../models').Movie;
 const renderProfile = (req, res) => {
     console.log(req.body);
     Actor.findByPk(req.params.index,{
-        include:[{
-            model:Actor
-        },
+        include:[
         {
             model:Movie
         }]
