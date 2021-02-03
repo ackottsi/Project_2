@@ -60,7 +60,7 @@ const postMovie = (req, res) => {
 const removeMovie = (req, res) => {
     Movie.destroy({ where: { id: req.params.index } })
     .then(() => {
-        res.redirect('/movies');
+        res.redirect('/');
     })	
 }
 

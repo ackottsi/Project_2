@@ -18,23 +18,19 @@ const Movie=require('../models').Movie;
 const renderProfile = (req, res) => {
     console.log(req.body);
     Actor.findByPk(req.params.index,{
-        include:[{
-            model:Actor
-        },
+        include:[
         {
             model:Movie
         }]
     })
-    .then(allMovies=> {
-        Movie.findAll()
-        .then(actorProfile=>{
+    .then(actor=> {
+        console.log(actor);
         res.render('actors/profile.ejs', {
-            actors: actorProfile,
-            movies:allMovies
+            actor:actor
         })
     })
-})
 }
+
 
 
 
