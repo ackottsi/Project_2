@@ -1,14 +1,14 @@
 const Actor=require('../models').Actor;
 const Movie=require('../models').Movie;
 
-const index = (req, res) => {
-    Actor.findAll()
-    .then(actors => {
-        res.render('actors/index.ejs', {
-            actors: actors
-        });
-    })
-}
+// const index = (req, res) => {
+//     Actor.findAll()
+//     .then(actors => {
+//         res.render('actors/index.ejs', {
+//             actors: actors
+//         });
+//     })
+// }
 
 // const show = (req, res) => {
 //     res.render('../show.ejs')//views/show.ejs
@@ -16,17 +16,24 @@ const index = (req, res) => {
 
 //handle showing profile of actor
 const renderProfile = (req, res) => {
+    console.log(req.body);
     Actor.findByPk(req.params.index,{
         include:[{
             model:Actor
+        },
+        {
+            model:Movie
         }]
     })
-
-    .then(actorProfile => {
+    .then(allMovies=> {
+        Movie.findAll()
+        .then(actorProfile=>{
         res.render('actors/profile.ejs', {
-            actors: actorProfile
+            actors: actorProfile,
+            movies:allMovies
         })
     })
+})
 }
 
 
@@ -41,17 +48,17 @@ const renderProfile = (req, res) => {
 // };
 
 
-const deleteActor = (req, res) => {
-    Actor.destroy({ where:{ id: req.params.index}})
-        .then(()=>{ 
-            res.redirect('/actors');
-    })
-}
+// const deleteActor = (req, res) => {
+//     Actor.destroy({ where:{ id: req.params.index}})
+//         .then(()=>{ 
+//             res.redirect('/actors');
+//     })
+// }
 
 
 module.exports = {
     renderProfile,
-    index,
-    deleteActor
+    // index,
+    // deleteActor
 }
 
