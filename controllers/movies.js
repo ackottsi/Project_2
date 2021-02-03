@@ -45,6 +45,16 @@ const editMovie = (req,res) => {
 }      
 
 
+const renderNew = (req, res) => {
+    res.render('new.ejs');
+
+
+}
 
 module.exports = {
     index,
+    renderEdit,
+    editMovie,
+    show,
+    renderNew
+}
