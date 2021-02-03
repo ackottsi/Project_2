@@ -2,8 +2,14 @@ const Actor=require('../models').Actor;
 const Movie=require('../models').Movie;
 
 const index = (req, res) => {
-    res.render('actors/index.ejs')//views/index.ejs
+    Actor.findAll()
+    .then(actors => {
+        res.render('actors/index.ejs', {
+            actors: actors
+        });
+    })
 }
+
 // const show = (req, res) => {
 //     res.render('../show.ejs')//views/show.ejs
 // }
@@ -18,7 +24,7 @@ const renderProfile = (req, res) => {
 
     .then(actorProfile => {
         res.render('actors/profile.ejs', {
-            actor: actorProfile
+            actors: actorProfile
         })
     })
 }
