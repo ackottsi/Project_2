@@ -28,6 +28,7 @@ const editMovie = (req,res) => {
 
   const renderEdit = (req,res) =>{
     Movie.findByPk(req.params.index)
+        
         .then(movie => { 
                 res.render('edit.ejs',{
                    movie:movie
