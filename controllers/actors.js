@@ -4,6 +4,9 @@ const Movie=require('../models').Movie;
 const index = (req, res) => {
     res.render('../index.ejs')//views/index.ejs
 }
+// const show = (req, res) => {
+//     res.render('../show.ejs')//views/show.ejs
+// }
 
 //handle showing profile of actor
 const renderProfile = (req, res) => {

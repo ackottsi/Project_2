@@ -45,11 +45,33 @@ const editMovie = (req,res) => {
 }      
 
 
+const renderNew = (req, res) => {
+    res.render('new.ejs');
+}
+
+const postMovie = (req, res) => {
+    Movie.create(req.body)
+    .then(newMovie => {
+        res.redirect('/movies');
+    })
+}
+
+
+const removeMovie = (req, res) => {
+    Movie.destroy({ where: { id: req.params.index } })
+    .then(() => {
+        res.redirect('/movies');
+    })	
+}
+
+
 
 module.exports = {
-    
-     index,
+    index,
     renderEdit,
     editMovie,
-    show
+    show,
+    renderNew,
+    postMovie,
+    removeMovie
 }
