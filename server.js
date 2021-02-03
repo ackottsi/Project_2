@@ -1,10 +1,10 @@
 const express = require('express'); //from documentation: express is function
 const methodOverride = require('method-override');              //app is an object
 const routes=require('./routes');
-const movie=require('./models/movies');
 
 
-require('dotenv').config();
+
+
 
 
 const app = express();//app is an object
