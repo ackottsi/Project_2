@@ -47,9 +47,9 @@ const editMovie = (req,res) => {
 
 
 module.exports = {
-    index,
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 772fc8c82b70f4dd2b4d799ab6a2172f15dd047a
+    
+     index,
+    renderEdit,
+    editMovie,
+    show
+}
