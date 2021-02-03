@@ -2,7 +2,7 @@ const Actor=require('../models').Actor;
 const Movie=require('../models').Movie;
 
 const index = (req, res) => {
-    res.render('../index.ejs')//views/index.ejs
+    res.render('actors/index.ejs')//views/index.ejs
 }
 // const show = (req, res) => {
 //     res.render('../show.ejs')//views/show.ejs
@@ -22,21 +22,30 @@ const renderProfile = (req, res) => {
         })
     })
 }
-const show = (req, res) => {
-    Actor.findByPk(req.params.index)
-    .then(actor =>  {
-        res.render('show.ejs',  {
-            Actors: actor
-        })
+
+
+
+// const show = (req, res) => {
+//     Actor.findByPk(req.params.index)
+//     .then(actor =>  {
+//         res.render('show.ejs',  {
+//             Actors: actor
+//         })
+//     })
+// };
+
+
+const deleteActor = (req, res) => {
+    Actor.destroy({ where:{ id: req.params.index}})
+        .then(()=>{ 
+            res.redirect('/actors');
     })
-};
+}
 
 
 module.exports = {
     renderProfile,
-    show,
-    index
-  
-  
+    index,
+    deleteActor
 }
 
