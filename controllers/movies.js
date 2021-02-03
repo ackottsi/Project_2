@@ -11,8 +11,17 @@ const index = (req, res) => {
         });
     })
 }
+const show = (req, res) => {
+    Movie.findByPk(req.params.index)
+    .then(movie =>  {
+        res.render('show.ejs',  {
+            movies: movie
+        })
+    })
+};
 
 module.exports = {
-    index
+    index,
+    show
 }
 

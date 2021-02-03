@@ -5,14 +5,15 @@
         <title></title>
     </head>
     <body>
-        <h1>Pokemon show page</h1>
-        The Pokemon name is <%= poke.name %> and it looks like this </br>
-        <img src= <%= poke.img %>
+        <h1>Movie show page</h1>
+        The Movie is <%= movies.name %> </br>
+        <!-- and it looks like this  -->
+        <!-- <img src= <%= poke.img %> -->
 
-        <h3>List of Players that use this Pokemon</h3>
-        <% for (let i=0; i< pokemon.players.length; i++) { %>
+        <h3>List of Actors for this Movie</h3>
+        <% for (let i=0; i< movie.actors.length; i++) { %>
             <li>
-                <%=pokemon.Players[i].name%>
+                <%=movie.Actors[i].name%>
             </li>
             <br>
             < } %>
