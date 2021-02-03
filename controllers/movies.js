@@ -47,14 +47,25 @@ const editMovie = (req,res) => {
 
 const renderNew = (req, res) => {
     res.render('new.ejs');
-
-
 }
+
+const postMovie = (req, res) => {
+    Movie.create(req.body)
+    .then(newMovie => {
+        res.redirect('/movies');
+    })
+}
+
+
+
+
+
 
 module.exports = {
     index,
     renderEdit,
     editMovie,
     show,
-    renderNew
+    renderNew,
+    postMovie
 }
