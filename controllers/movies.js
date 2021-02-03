@@ -57,7 +57,12 @@ const postMovie = (req, res) => {
 }
 
 
-
+const removeMovie = (req, res) => {
+    Movie.destroy({ where: { id: req.params.index } })
+    .then(() => {
+        res.redirect('/movies');
+    })	
+}
 
 
 
@@ -67,5 +72,6 @@ module.exports = {
     editMovie,
     show,
     renderNew,
-    postMovie
+    postMovie,
+    removeMovie
 }
