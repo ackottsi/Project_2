@@ -20,8 +20,31 @@ const show = (req, res) => {
     })
 };
 
+
+const editMovie = (req,res) => {
+    Movie.update(req.body, {//updating movie
+        where: { id: req.params.index },
+        returning: true,
+      })
+
+  .then(updateMovie => {
+            Movie.findByPk(req.params.index);
+              res.redirect(`/movies/${req.params.index}`);
+          })
+      }
+
+
+  const renderEdit = (req,res) =>{
+    Movie.findByPk(req.params.index)
+        
+        .then(movie => { 
+                res.render('edit.ejs',{
+                   movie:movie
+                })
+        })
+}      
+
+
+
 module.exports = {
     index,
-    show
-}
-
