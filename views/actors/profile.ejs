@@ -13,9 +13,12 @@
         <h1>This is the profile for <%=actor.name%></h1>
     <form action="/actors/profile/<%=actor.id%>?_method=PUT" method="POST">
             Name: <input type="text" name="name" value="<%=actor.name%>" /><br> <br>
-                  <input id="editButton" type="submit" value="Edit Profile"/><br></br>
+                  <input id="editButton" type="submit" value="Update Name"/><br></br>
        <br>
+    </form>
 
+
+    <form action="/actors/profile/<%=actor.id%>?_method=PUT" method="POST">
        <select name="movie">
         <% for ( let i = 0; i < movies.length; i++ ) {
             let selected = ( i == 0 ) ? "selected" : "";
@@ -24,9 +27,11 @@
             </option>
        <% } %>
     </select>
-
-</form>
-
+       <br></br>
+  
+       <input id="editButton" type="submit" value="Add Movie to Profile"/><br></br>
+   
+<form>
 
 
 <h3>This Actor is associated with the following movies:</h3>
@@ -36,12 +41,19 @@
             </li>
             <br>
         <% } %>
+        <br><br><br><br><br>
+        
 
-       
+        <h3>Movie App Page Links</h3>
+        <nav>
+            <a href="/actors">Actor list</a><br><br>
+        </nav>
+        <nav>
+            <a href="/movies">Movie list</a><br><br>
+        </nav>
+        <nav>
+            <a href="/">Welcome Page</a><br><br>
+        </nav>
 
-
-
-
-       
     </body>
 </html>
