@@ -10,10 +10,6 @@ const index = (req, res) => {
     })
 }
 
-// const show = (req, res) => {
-//     res.render('../show.ejs')//views/show.ejs
-// }
-
 //handle showing profile of actor
 const renderProfile = (req, res) => {
     console.log(req.body);
@@ -57,18 +53,17 @@ const editProfile = (req, res) => {
 }
        
 
+const renderNewActor= (req, res) => {
+    res.render('actors/new.ejs')
+}
 
+const createActor = (req, res) => {
+    Actor.create(req.body)
+    .then(newActor => {
+        res.redirect(`/actors/profile/${newActor.id}`);
+    })
+}
 
-
-
-// const show = (req, res) => {
-//     Actor.findByPk(req.params.index)
-//     .then(actor =>  {
-//         res.render('show.ejs',  {
-//             Actors: actor
-//         })
-//     })
-// };
 
 
 // const deleteActor = (req, res) => {
@@ -82,6 +77,9 @@ const editProfile = (req, res) => {
 module.exports = {
     renderProfile,
     index,
-    editProfile
+    editProfile,
+    renderNewActor,
+    createActor
+    // deleteActor
 }
 
