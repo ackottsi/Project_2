@@ -2,7 +2,9 @@
  "development": {
  "database": "movies_dev",
  "host": "127.0.0.1",
- "dialect": "postgres"
+ "dialect": "postgres",
+ "username": "postgres",
+ "password": "Cutted1975"
  },
 
   "production": {

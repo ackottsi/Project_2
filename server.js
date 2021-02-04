@@ -1,6 +1,7 @@
 const express = require('express'); //from documentation: express is function
 const methodOverride = require('method-override');              //app is an object
 const routes=require('./routes');
+const router = require('./routes/actors');
 
 
 
@@ -24,9 +25,23 @@ app.use(methodOverride('_method'));
 
 
 //adding router object to middleware
-app.use('/',routes.movies);
+app.use('/movies',routes.movies);
 app.use('/actors',routes.actors);
 
+
+// const index = (req, res) => {
+//   Actor.findAll()
+//   .then(actors => {
+//       res.render('actors/index.ejs', {
+//           actors: actors
+//       });
+//   })
+// }
+
+
+app.get('/',(req,res)=>{
+  res.render('welcome.ejs')
+})
 
 
 app.listen(process.env.PORT||3000, () => {
