@@ -4,10 +4,6 @@ const routes=require('./routes');
 const router = require('./routes/actors');
 
 
-
-
-
-
 const app = express();//app is an object
 
 
@@ -28,6 +24,9 @@ app.use(methodOverride('_method'));
 app.use('/movies',routes.movies);
 app.use('/actors',routes.actors);
 
+app.get("/",(req, res) =>  {
+  res.render("welcome.ejs")
+})
 
 // const index = (req, res) => {
 //   Actor.findAll()
@@ -37,7 +36,6 @@ app.use('/actors',routes.actors);
 //       });
 //   })
 // }
-
 
 app.get('/',(req,res)=>{
   res.render('welcome.ejs')
