@@ -24,7 +24,7 @@ app.use(methodOverride('_method'));
 
 
 //adding router object to middleware
-app.use('/movies',routes.movies);
+app.use('/',routes.movies);
 app.use('/actors',routes.actors);
 
 
