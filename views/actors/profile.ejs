@@ -9,7 +9,14 @@
         input{margin-top: 15px;}
     </style> -->
     <body>
-        <h1>Welcome Profile page test</h1>
+
+        <h1>This is the profile for <%=actor.name%></h1>
+    <form action="/actors/profile/<%=actor.id%>?_method=PUT" method="POST">
+            Name: <input type="text" name="name" value="<%=actor.name%>" /><br> <br>
+                  <input id="editButton" type="submit" value="Edit Profile"/><br></br>
+       <br>
+
+
    
 
        
