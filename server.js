@@ -3,10 +3,6 @@ const methodOverride = require('method-override');              //app is an obje
 const routes=require('./routes');
 
 
-
-
-
-
 const app = express();//app is an object
 
 
@@ -27,6 +23,9 @@ app.use(methodOverride('_method'));
 app.use('/movies',routes.movies);
 app.use('/actors',routes.actors);
 
+app.get("/",(req, res) =>  {
+  res.render("welcome.ejs")
+})
 
 
 app.listen(process.env.PORT || 3000, () => {
