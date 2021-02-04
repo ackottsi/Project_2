@@ -37,16 +37,11 @@ app.get("/",(req, res) =>  {
 //   })
 // }
 
-<<<<<<< HEAD
-app.listen(process.env.PORT || 3000, () => {
-=======
-
 app.get('/',(req,res)=>{
   res.render('welcome.ejs')
 })
 
 
 app.listen(process.env.PORT||3000, () => {
->>>>>>> dc9dff55bfe89c10cf106c28bca0832a192c7dba
     console.log("listening");
 });
