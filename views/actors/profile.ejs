@@ -16,7 +16,7 @@
                   <input id="editButton" type="submit" value="Edit Profile"/><br></br>
        <br>
 
-       <select name="name">
+       <select name="movie">
         <% for ( let i = 0; i < movies.length; i++ ) {
             let selected = ( i == 0 ) ? "selected" : "";
         %>
@@ -32,7 +32,7 @@
 <h3>This Actor is associated with the following movies:</h3>
         <% for (let i=0; i< actor.Movies.length; i++){ %>
             <li>
-               <%=player.Movies[i].name%>
+               <%=actor.Movies[i].name%>
             </li>
             <br>
         <% } %>

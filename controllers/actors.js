@@ -39,14 +39,15 @@ const renderProfile = (req, res) => {
 
 
 const editProfile = (req, res) => {
-    console.log(req.body);
+    // console.log(req.body+"req.body cl");
     Actor.update(req.body,{
             where:{id: req.params.index},
             returning:true
         })
     
     .then(actor =>{
-            Movie.findByPk(req.body.movie).then(foundMovie=>{
+        // console.log(Movie+"MOVIE");
+            Movie.findByPk(req.body.movie).then(foundMovie=>{ 
                 Actor.findByPk(req.params.index).then(foundActor=>{
                     foundActor.addMovie(foundMovie);
                     res.redirect(`/actors/profile/${req.params.index}`);
