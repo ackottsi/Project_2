@@ -14,14 +14,14 @@
         <ul>
             <% for (let i=0; i< actors.length; i++){ %>
                 <li>
-                   <a href="/actors/<%=actors[i].id%>"><%=actors[i].name%></a>
+                   <a href="/actors/profile/<%=actors[i].id%>"><%=actors[i].name%></a>
                 </li>
                 <!-- from html forms, only http GET & POST requests can be sent -->
                 <form action="/actors/<%=actors[i].id%>?_method=DELETE" method="POST">
                     <input type="submit" value="Delete" />
                 </form>
 
-                <a href="/actors/<%=actors[i].id%>/edit">Edit</a>
+                <a href="/actors/profile/<%=actors[i].id%>/edit">Edit</a>
                 <br><br>
             <% } %>
         </ul>
