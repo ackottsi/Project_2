@@ -56,7 +56,10 @@ Temporary Items
 # SFTP configuration file
 sftp-config.json
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b302d352efc7a59a16b2797320763770eeb76d43
 # Package control specific files
 Package Control.last-run
 Package Control.ca-list
