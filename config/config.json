@@ -1,4 +1,4 @@
-{
+ {
  "development": {
  "database": "movies_dev",
  "host": "127.0.0.1",
@@ -19,4 +19,3 @@
   "start": "node server.js"
     }
 }
- 
