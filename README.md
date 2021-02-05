@@ -69,7 +69,7 @@ As a user of the movie-app, I would like to:
 
 ## Lessons Learned
 
- * Learning Git and working with a partner.  This created challenges in version control and keep things 
+ * Learning Git and working with a partner.  This created challenges in version control.
 
  * Git also proveed to be the most helpful tool in keepings things straight.  Our team took a careful approach early and decided to use unique branches as we worked on features.  This helped limit conflicts and provided an opportunity for the code to be reviewed on the git repository prior to merging.
 
